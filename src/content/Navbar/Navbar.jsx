@@ -6,18 +6,18 @@ import './Navbar.css'
 
 
 const Navbar = () => {
-  const getNavLinkClass = ({ isActive }) => isActive ? 'active__link' : ''
+  const getNavLinkClass = ({ isActive }) => 
+    `nav__background text ${isActive ? 'active__link' : ''}`;
+
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState('Username')
   
   return (
-    <div className='navbar'>
+    <div className='navbar text'>
 
       <div className='navbar__section logo'>
-        <div className='navbar__logo'>
-          Logo
-        </div>
+        <div className='navbar__logo'>KaGaRya</div>
       </div>
 
       <div className='navbar__section links'>
