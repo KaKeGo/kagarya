@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar__section {
+    display:  flex;
+    align-items: center;
+}
+
+.logo {
+    justify-content: flex-start;
+}
+
+.navbar__logo {
+    margin-left: 20px;
+}
+
+.links {
+    justify-content: center;
+    gap: 20px;
+}
+
+.user {
+    justify-content: flex-end;
+}
+
+.navbar__userprofile {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.active__link {
+    text-decoration: underline;
+}
