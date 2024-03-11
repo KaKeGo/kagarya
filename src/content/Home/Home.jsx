@@ -4,10 +4,9 @@ import CSRFToken from '../../CSRFToken'
 
 const Home = () => {
   return (
-    <div>Home
-      <div>
-        <CSRFToken />
-      </div>
+    <div>
+      <CSRFToken />
+      Home
     </div>
   )
 }

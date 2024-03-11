@@ -12,8 +12,9 @@ const CSRFToken = () => {
                 const response = await axios.get(
                     'http://localhost:8000/accounts/getcsrftoken/',
                 )
-                const csrfToken = response.data
+                const csrfToken = response.data.CSRFToken
                 Cookies.set('kakusie', csrfToken)
+                console.log(csrftoken)
                 setCsrfToken(csrfToken)
             } catch (error) {
                 console.error('Failed to fetch CSRFToken', error)
