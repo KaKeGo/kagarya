@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className='navbar__logo'>KaGaRya</div>
       </div>
 
-      <div className='navbar__section links'>
+      <div className='navbar__section links font-madimi text-lg'>
         <NavLink to='/' end className={getNavLinkClass}>Home</NavLink>
         <NavLink to='/register' className={getNavLinkClass}>Register</NavLink>
         <NavLink to='/login' className={getNavLinkClass}>Login</NavLink>
