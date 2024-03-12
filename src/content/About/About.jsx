@@ -1,4 +1,5 @@
 import React from 'react'
+import CommingSoon from '../../components/CommingSoon/CommingSoon'
 
 import './About.css'
 
@@ -6,7 +7,9 @@ import './About.css'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div className='site__height'>
+      <CommingSoon />
+    </div>
   )
 }
 

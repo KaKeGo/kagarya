@@ -1,8 +1,11 @@
 import React from 'react'
+import CommingSoon from '../../../components/CommingSoon/CommingSoon'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div className='site__height'>
+      <CommingSoon />
+    </div>
   )
 }
 
