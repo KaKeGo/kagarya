@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import logo from '../../assets/logo/site_logo/kagarya-logo.png'
 import './Navbar.css'
 
 
@@ -17,7 +18,9 @@ const Navbar = () => {
     <div className='navbar text'>
 
       <div className='navbar__section logo'>
-        <div className='navbar__logo'>KaGaRya</div>
+        <NavLink to='/'>
+          <img src={logo} alt='KaGaRya logo' className='navbar__logo' />
+        </NavLink>
       </div>
 
       <div className='navbar__section links font-madimi text-lg'>

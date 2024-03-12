@@ -8,6 +8,8 @@ module.exports = {
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
         'madimi': ['"Madimi One"', 'cursive'], 
+        'radio-canada': ['"Radio Canada"', 'sans-serif'],
+        'concert-one': ['"Concert One"', 'cursive'],
       },
     },
   },

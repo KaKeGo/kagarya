@@ -12,7 +12,7 @@ const Footer = () => {
     }
 
     return (
-        <div className='footer'>
+        <div className='footer font-concert-one'>
 
             <div className='section__1'>
                 <p>KaGaRya</p>
