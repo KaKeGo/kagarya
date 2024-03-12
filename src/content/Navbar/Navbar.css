@@ -41,14 +41,14 @@
     margin-right: 20px;
 }
 
-a {
+.navbar a {
     text-decoration: none;
     color: black;
     padding: 5px 10px;
     position: relative;
 }
 
-a::after {
+.navbar a::after {
     content: '';
     position: absolute;
     width: 60%;
@@ -61,12 +61,12 @@ a::after {
     border-radius: 4px;
 }
 
-a.active__link::after {
+.navbar a.active__link::after {
     background-color: rgba(163, 225, 45, 1);
     transform: translateX(-50%) scale(1);
 }
 
-a:hover::after {
+.navbar a:hover::after {
     background-color: #cc9900;
     transform: translateX(-50%) scale(1);
 }

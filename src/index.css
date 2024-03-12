@@ -8,3 +8,7 @@
 body {
     background-color: whitesmoke;
 }
+
+.site__height {
+    min-height: calc(100vh - 50px);
+}

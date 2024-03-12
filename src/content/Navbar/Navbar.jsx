@@ -24,6 +24,7 @@ const Navbar = () => {
         <NavLink to='/' end className={getNavLinkClass}>Home</NavLink>
         <NavLink to='/register' className={getNavLinkClass}>Register</NavLink>
         <NavLink to='/login' className={getNavLinkClass}>Login</NavLink>
+        <NavLink to='/about' className={getNavLinkClass}>About</NavLink>
       </div>
 
       <div className='navbar__section user'>

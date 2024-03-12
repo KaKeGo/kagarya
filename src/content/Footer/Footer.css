@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px 10px black;
+}
+
+.section__1, .section__2 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.section__1 {
+    flex: 70%;
+}
+
+.section__2 {
+    flex: 30%;
+}
+
+.footer__icon {
+    color: white;
+    margin: 0 10px;
+}
+
+.footer__icon:hover {
+    color: rgba(163, 225, 45, 1);
+}

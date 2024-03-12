@@ -4,8 +4,7 @@ import CSRFToken from '../../CSRFToken'
 
 const Home = () => {
   return (
-    <div>
-      <CSRFToken />
+    <div className='site__height'>
       Home
     </div>
   )
