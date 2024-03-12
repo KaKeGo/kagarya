@@ -20,11 +20,10 @@
 }
 
 .home__update, .home__update__future, .home__news, .home__news2, .home__popular, .home__ranking {
-    padding: 10px;
     border: 2px solid #4b0082;
     box-shadow: 0 2px 5px #4b0085;
-    background-color: rgba(240, 240, 240, 1);
-    /* background-color: lightgray; */
+    /* background-color: rgba(240, 240, 240, 1); */
+    background-color: whitesmoke;
 }
 
 .home__update, .home__update__future {
@@ -43,6 +42,7 @@
     font-weight: bold;
     font-size: 18px;
     margin-left: 20px;
+    margin-top: 5px;
 }
 
 .home__border {
@@ -52,4 +52,5 @@
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
 }
