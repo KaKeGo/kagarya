@@ -9,7 +9,7 @@
 
 
 body {
-    background-color: whitesmoke;
+    background-color: lightgray;
 }
 
 .b {
@@ -19,3 +19,7 @@ body {
 .site__height {
     min-height: calc(100vh - 50px);
 }
+
+/* 
+background-color: rgba(240, 240, 240, 1); Gray white
+*/

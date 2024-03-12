@@ -23,7 +23,8 @@
     padding: 10px;
     border: 2px solid #4b0082;
     box-shadow: 0 2px 5px #4b0085;
-    background-color: lightgray;
+    background-color: rgba(240, 240, 240, 1);
+    /* background-color: lightgray; */
 }
 
 .home__update, .home__update__future {
