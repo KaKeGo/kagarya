@@ -6,22 +6,28 @@ import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-
 import './Footer.css'
 
 const Footer = () => {
-  return (
-    <div className='footer'>
+    const getCurrentDate = () => {
+        const today = new Date()
+        return today.toLocaleDateString('pl-PL')
+    }
 
-        <div className='section__1'>
-            <p>KaGaRya</p>
-            <p>Email: future</p>
-            <p>Created by: KaKeGo</p>
-        </div>
-        <div className='section__2'>
-            <a className='footer__icon' href='#'><FontAwesomeIcon icon={faFacebook} size='lg'/></a>
-            <a className='footer__icon' href='#'><FontAwesomeIcon icon={faTiktok} size='lg'/></a>
-            <a className='footer__icon' href='#'><FontAwesomeIcon icon={faInstagram} size='lg'/></a>
-        </div>
+    return (
+        <div className='footer'>
 
-    </div>
-  )
+            <div className='section__1'>
+                <p>KaGaRya</p>
+                <p>Email: future</p>
+                <p>Created by: KaKeGo</p>
+                <p>Site idea date: 20.06.2023 - {getCurrentDate()}</p>
+            </div>
+            <div className='section__2'>
+                <a className='footer__icon' href='#'><FontAwesomeIcon icon={faFacebook} size='xl'/></a>
+                <a className='footer__icon' href='#'><FontAwesomeIcon icon={faTiktok} size='xl'/></a>
+                <a className='footer__icon' href='#'><FontAwesomeIcon icon={faInstagram} size='xl'/></a>
+            </div>
+
+        </div>
+    )
 }
 
 export default Footer

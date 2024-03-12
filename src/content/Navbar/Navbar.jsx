@@ -7,7 +7,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   const getNavLinkClass = ({ isActive }) => 
-    `nav__background text ${isActive ? 'active__link' : ''}`;
+    `${isActive ? 'active__link' : ''}`;
 
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
