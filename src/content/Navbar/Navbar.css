@@ -59,7 +59,7 @@
     height: 6px;
     background-color: rgba(163, 225, 45, 1);
     left: 50%;
-    bottom: -1px;
+    bottom: 1px;
     transform: translateX(-50%) scaleX(0);
     transition: transform 0.4s ease-in-out;
     border-radius: 4px;
