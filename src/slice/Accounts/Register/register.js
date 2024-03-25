@@ -2,14 +2,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import Cookies from 'js-cookie'
 
-import DEV_URL from '../../../Api_url'
+import { DEV_URL } from '../../../Api_url'
 
 
 
 export const registerUser = createAsyncThunk(
-    'auth/register',
+    'user/register',
     async (userData, { rejectWithValue }) => {
-        const csrftoken = Cookies.get('csrftoken')
+        const csrftoken = Cookies.get('kakusie')
 
         const config = {
             headers: {
@@ -22,13 +22,14 @@ export const registerUser = createAsyncThunk(
 
         try {
             const response = await axios.post(
-                `${DEV_URL}account/create/`,
+                `${DEV_URL}accounts/create/`,
                 userData, 
                 config
                 )
+                console.log('Response data:', response.data)
                 return response.data
         } catch (err) {
-            console.log(err.response.data)
+            console.log('Error data:', err.response.data)
             return rejectWithValue(err.response.data)
         }
     }
@@ -43,7 +44,13 @@ const initialState = {
 const registerSlice = createSlice({
     name: 'register',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        resetRegisterState: (state) => {
+            state.status = 'idle'
+            state.user = {}
+            state.error = null
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(registerUser.pending, (state) => {
@@ -60,5 +67,7 @@ const registerSlice = createSlice({
             })
     }
 })
+
+export const { resetRegisterState } = registerSlice.actions
 
 export default registerSlice.reducer

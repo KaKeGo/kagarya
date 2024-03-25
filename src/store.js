@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { registerUser } from './slice/Accounts/Register/register'
+import registerReducer from './slice/Accounts/Register/register'
 
 
 const store = configureStore({
     reducer: {
-        accountCreate: registerUser,
+        accountCreate: registerReducer,
     }
 })
 

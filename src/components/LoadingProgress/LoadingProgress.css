@@ -1,0 +1,13 @@
+
+#nprogress .bar {
+    background: rgba(163, 225, 45, 1) !important;
+    height: 5px !important;
+}
+
+#nprogress .spinner {
+    display: none !important;
+}
+
+#nprogress .peg {
+    display: none !important;
+}

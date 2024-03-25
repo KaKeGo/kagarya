@@ -1,6 +1,10 @@
 .register__container {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .register__form {
@@ -10,16 +14,25 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 80%;
-    height: 450px;
+    width: 50%;
+    min-height: 300px;
     align-items: center;
     background-color: whitesmoke;
+}
+
+.register__title {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #4b0082;
 }
 
 .form__group {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
 }
 
 .form__group label {
@@ -30,6 +43,7 @@
 
 .form__group input[type="email"],
 .form__group input[type="password"],
+.form__group input[type="text"],
 .form__group input[type="checkbox"] + label {
     padding: 5px;
     padding-left: 20px;
@@ -42,6 +56,7 @@
 }
 
 .form__group input[type="email"]:focus,
+.form__group input[type="text"]:focus,
 .form__group input[type="password"]:focus {
     outline: none;
     box-shadow: 0 6px 5px #4b0085;
@@ -60,6 +75,7 @@
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
+    transition: color 0.5s ease, background-color 0.4s ease, box-shadow 0.5s ease, border 0.4s ease;
 }
 
 .register__form button:hover {
@@ -77,7 +93,37 @@
 }
 
 .form__checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.form__checkbox .custom__checkbox {
     margin-right: 15px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 2px solid #4b0082;
+    position: relative;
+}
+
+.form__checkbox input[type="checkbox"]:checked + .custom__checkbox {
+    background-color: #4b0082;
+}
+
+.form__checkbox input[type="checkbox"]:checked + .custom__checkbox::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -6px;
+    width: 10px;
+    height: 18px;
+    border: solid #00ff00;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }
 
 .form__checkbox label {
@@ -91,4 +137,61 @@
     color: #4b0082;
     margin-left: 5px;
     font-weight: 600;
+}
+
+.password__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password__wrapper input {
+    width: 100%;
+    padding: 5px 20px;  
+}
+
+.password__toggle {
+    outline: none; 
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: calc(100% - 12px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    padding: 0;
+}
+.password__toggle:hover, .password__toggle:focus {
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.fa-eye, .fa-eye-slash {
+    color: #4b0082;
+}
+
+.error {
+    color: #be0000;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+@media (max-width: 1024px) {
+    .register__form {
+        width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .register__form {
+        width: 95%;
+    }
+    .form__group {
+        width: 90%;
+    }
 }
