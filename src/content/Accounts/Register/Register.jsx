@@ -10,7 +10,7 @@ import useRegisterLocalStorage from './registerlocalstorage'
 import CSRFToken from '../../../CSRFToken'
 import LoadingProgress from '../../../components/LoadingProgress/LoadingProgress';
 
-import './Register.css'
+import styles from './Register.module.css'
 
 
 
@@ -55,70 +55,69 @@ const Register = () => {
   }
 
   return (
-    <div className='site__height register__container'>
+    <div className={`${styles.register__container} site__height`}>
       <div>
         <LoadingProgress isLoading={status === 'loading'}/>
       </div>
       
-      <form className='register__form' onSubmit={handleSubmit}><CSRFToken />
+      <form className={styles.register__form} onSubmit={handleSubmit}><CSRFToken />
 
-        <h2 className='register__title'>Create Account</h2>
+        <h2 className={styles.register__title}>Create Account</h2>
 
-        <div className='form__group'>
+        <div className={styles.form__group}>
           <label htmlFor='email'>Email</label>
           <input type='email' id='email' placeholder='mail@mail.com' autoFocus required
             value={email} onChange={(e) => setEmail(e.target.value)}
           />
-          {formErrors.email && <p className="error">{formErrors.email[0]}</p>}
+          {formErrors.email && <p className={styles.error}>{formErrors.email[0]}</p>}
         </div>
 
-        <div className='form__group'>
+        <div className={styles.form__group}>
           <label htmlFor='password'>Password</label>
-          <div className='password__wrapper'>
+          <div className={styles.password__wrapper}>
             <input type={passwordVisible ? 'text' : 'password'} id='password' placeholder='Password' required
               value={password} onChange={(e) => setPassword(e.target.value)} maxLength={24}
             />
-            <div className='password__toggle'
+            <div className={styles.password__toggle}
               onClick={() => setPasswordVisible(!passwordVisible)}
               role="button" tabIndex="0"
               onKeyPress={(e) => { if (e.key === 'Enter') setPasswordVisible(!passwordVisible); }}
             >
-              <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} />
+              <FontAwesomeIcon className={styles.icon__style} icon={passwordVisible ? faEyeSlash : faEye} />
             </div>
           </div>
-          {formErrors.password && <p className="error">{formErrors.password[0]}</p>}
+          {formErrors.password && <p className={styles.error}>{formErrors.password[0]}</p>}
         </div>
 
-        <div className='form__group'>
+        <div className={styles.form__group}>
           <label htmlFor='confirm-password'>Confirm password</label>
-          <div className='password__wrapper'>
+          <div className={styles.password__wrapper}>
             <input type={passwordConfirmVisible ? 'text' : 'password'} id='confirm-password' placeholder='Confirm password' required
               value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} maxLength={24}
             />
-            <div className='password__toggle'
+            <div className={styles.password__toggle}
               onClick={() => setPasswordConfirmVisible(!passwordConfirmVisible)}
               role="button"
               tabIndex="0"
               onKeyPress={(e) => { if (e.key === 'Enter') setPasswordConfirmVisible(!passwordConfirmVisible); }}
             >
-              <FontAwesomeIcon icon={passwordConfirmVisible ? faEyeSlash : faEye} />
+              <FontAwesomeIcon className={styles.icon__style} icon={passwordConfirmVisible ? faEyeSlash : faEye} />
             </div>
           </div>
-          {formErrors.password_confirm && <p className="error">{formErrors.password_confirm[0]}</p>}
+          {formErrors.password_confirm && <p className={styles.error}>{formErrors.password_confirm[0]}</p>}
         </div>
 
-        <div className='form__checkbox terms'>
+        <div className={[styles.form__checkbox, styles.terms].join(' ')}>
           <input type='checkbox' id='termsCheckbox' required
             checked={termsAccepted} onChange={(e) => setTermsAccepted(e.target.checked)}
           />
-          <label htmlFor='termsCheckbox' className="custom__checkbox"></label>
+          <label htmlFor='termsCheckbox' className={styles.custom__checkbox}></label>
           <label>Akcept terms u can find them <a href='#' htmlFor='termsCheckbox'> here</a>.</label>
           
         </div>
 
         <button type='submit'>Create account</button>
-        {status === 'loading' && <p>Creating account...</p>}
-        {error && typeof error === 'string' && <p className="error">{error}</p>}
+        {error && typeof error === 'string' && <p className={styles.error}>{error}</p>}
 
       </form>
 
