@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import { registerUser, resetRegisterState } from '../../../slice/Accounts/Register/register'
-import useRegisterLocalStorage from './registerlocalstorage'
+import useLoaclStorage from '../../../components/LocalStorage/LocalStorage'
 import CSRFToken from '../../../CSRFToken'
 import LoadingProgress from '../../../components/LoadingProgress/LoadingProgress';
 
@@ -18,16 +18,16 @@ const Register = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [email, setEmail] = useRegisterLocalStorage('registerEmail', '');
-  const [password, setPassword] = useRegisterLocalStorage('registerPassword', '');
-  const [passwordConfirm, setPasswordConfirm] = useRegisterLocalStorage('registerPasswordConfirm', '');
-  const [termsAccepted, setTermsAccepted] = useRegisterLocalStorage('registerTermsAccepted', false);
+  const [email, setEmail] = useLoaclStorage('registerEmail', '');
+  const [password, setPassword] = useLoaclStorage('registerPassword', '');
+  const [passwordConfirm, setPasswordConfirm] = useLoaclStorage('registerPasswordConfirm', '');
+  const [termsAccepted, setTermsAccepted] = useLoaclStorage('registerTermsAccepted', false);
   const [formErrors, setFormErrors] = useState({})
 
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [passwordConfirmVisible, setPasswordConfirmVisible] = useState(false)
 
-  const { status, error } = useSelector((state) => state.accountCreate)
+  const { status, error } = useSelector((state) => state.register)
 
   useEffect(() => {
     if (error && typeof error === 'object') {

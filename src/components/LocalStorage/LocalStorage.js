@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 
-const useRegisterLocalStorage = (key, initialValue) => {
+const useLoaclStorage = (key, initialValue) => {
     const [value, setValue] = useState(() => {
         const jsonValue = localStorage.getItem(key)
         if (jsonValue != null) return JSON.parse(jsonValue)
@@ -15,4 +15,4 @@ const useRegisterLocalStorage = (key, initialValue) => {
     return [value, setValue]
 }
 
-export default useRegisterLocalStorage
+export default useLoaclStorage
