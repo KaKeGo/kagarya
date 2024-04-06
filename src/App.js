@@ -5,14 +5,18 @@ import Home from './content/Home/Home'
 import About from './content/About/About'
 import Register from './content/Accounts/Register/Register'
 import Login from './content/Accounts/Login/Login'
+import UserStatus from './content/Accounts/UserStatus/UserStatus';
+
 
 
 
 function App() {
   return (
     <div className="App">
+      <UserStatus />
       <Layout>
         <Routes>
+          
 
           {/* Content */}
           <Route path='/' element={<Home />}/>
