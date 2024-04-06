@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import LogoutButton from '../Accounts/Logout/Logout'
+
 import logo from '../../assets/logo/site_logo/kagarya-logo.png'
 import './Navbar.css'
 
@@ -34,6 +36,7 @@ const Navbar = () => {
         {isLoggedIn && (
         <div className='navbar__userprofile'>
           {username}
+          <LogoutButton />
         </div>
         )}
       </div>
