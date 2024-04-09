@@ -14,10 +14,8 @@ export const userStatus = createAsyncThunk(
                 `${DEV_URL}accounts/userstatus/`,
                 {withCredentials: true}
             )
-            console.log('User status:', response.data)
             return response.data
         } catch (err) {
-            console.log('error user status:',  err.response.data)
             return rejectWithValue(err.response.data)
         }
     }

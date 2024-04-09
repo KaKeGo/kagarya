@@ -7,8 +7,6 @@ import { userStatus } from "../../../slice/Accounts/Userstatus/userStatus";
 const UserStatus = () => {
     const dispatch = useDispatch()
 
-    const isAuthenticated = useSelector(state => state.userStatus.isAuthenticated)
-    
     useEffect(() => {
         dispatch(userStatus())
     }, [dispatch])
