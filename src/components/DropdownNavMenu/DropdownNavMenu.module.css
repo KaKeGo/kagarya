@@ -1,0 +1,57 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown__toggle {
+
+}
+
+.dropdown__background {
+
+}
+
+.dropdown__content {
+
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    animation: slideDown 0.5s ease-out;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.dropdown__item {
+}
+
+.dropdown__item:hover {
+}

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import LogoutButton from '../Accounts/Logout/Logout'
+import DropdownNavMenu from '../../components/DropdownNavMenu/DropdownNavMenu'
 
 import logo from '../../assets/logo/site_logo/kagarya-logo.png'
-import './Navbar.css'
+import styles from './Navbar.module.css'
 
 
 
@@ -17,15 +17,15 @@ const Navbar = () => {
   const user = useSelector(state => state.userStatus.user)
   
   return (
-    <div className='navbar text'>
+    <div className={`${styles.navbar} ${styles.text}`}>
 
-      <div className='navbar__section logo'>
+      <div className={`${styles.navbar__section} ${styles.logo}`}>
         <NavLink to='/'>
-          <img src={logo} alt='KaGaRya logo' className='navbar__logo' />
+          <img src={logo} alt='KaGaRya logo' className={styles.navbar__logo}/>
         </NavLink>
       </div>
 
-      <div className='navbar__section links font-madimi text-lg'>
+      <div className={`${styles.navbar__section} ${styles.links} font-madimi text-lg`}>
         <NavLink to='/' end className={getNavLinkClass}>Home</NavLink>
         {!isAuthenticated && (
           <>
@@ -36,12 +36,12 @@ const Navbar = () => {
         <NavLink to='/about' className={getNavLinkClass}>About</NavLink>
       </div>
 
-      <div className='navbar__section user'>
+      <div className={`${styles.navbar__section} ${styles.user}`}>
         {isAuthenticated && (
           <>
           <p className='mr-5'>{user?.username_or_email}</p>
-          <div className='navbar__userprofile'>
-            <LogoutButton />
+          <div className={styles.navbar__userprofile}>
+            <DropdownNavMenu />
           </div>
           </>
         )}
