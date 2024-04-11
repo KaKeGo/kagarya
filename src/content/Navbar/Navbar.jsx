@@ -11,7 +11,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   const getNavLinkClass = ({ isActive }) => 
-    `${isActive ? 'active__link' : ''}`;
+    isActive ? styles.active__link : '';
 
   const isAuthenticated = useSelector(state => state.userStatus.isAuthenticated);
   const user = useSelector(state => state.userStatus.user)
@@ -26,14 +26,26 @@ const Navbar = () => {
       </div>
 
       <div className={`${styles.navbar__section} ${styles.links} font-madimi text-lg`}>
-        <NavLink to='/' end className={getNavLinkClass}>Home</NavLink>
+        <NavLink to='/' end 
+          className={({ isActive }) => `${styles.navbar__links} ${getNavLinkClass({ isActive })}`}>
+          Home
+        </NavLink>
         {!isAuthenticated && (
           <>
-            <NavLink to='/register' className={getNavLinkClass}>Register</NavLink>
-            <NavLink to='/login' className={getNavLinkClass}>Login</NavLink>
+            <NavLink to='/register' 
+              className={({ isActive }) => `${styles.navbar__links} ${getNavLinkClass({ isActive })}`}>
+              Register
+            </NavLink>
+            <NavLink to='/login' 
+              className={({ isActive }) => `${styles.navbar__links} ${getNavLinkClass({ isActive })}`}>
+              Login
+            </NavLink>
           </>
         )}
-        <NavLink to='/about' className={getNavLinkClass}>About</NavLink>
+        <NavLink to='/about' 
+          className={({ isActive }) => `${styles.navbar__links} ${getNavLinkClass({ isActive })}`}>
+          About
+        </NavLink>
       </div>
 
       <div className={`${styles.navbar__section} ${styles.user}`}>

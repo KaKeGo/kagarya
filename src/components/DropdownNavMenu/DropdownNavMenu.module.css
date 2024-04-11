@@ -1,57 +1,92 @@
+
 .dropdown {
     position: relative;
 }
 
 .dropdown__toggle {
+    font-size: 24px;
+    transition: 0.3s ease, color 0.6s ease;
+}
 
+.dropdown__toggle:hover {
+    color: rgba(163, 225, 45, 1);
+}
+
+.dropdown__toggle__active {
+    color: rgba(163, 225, 45, 1);
 }
 
 .dropdown__background {
-
+    background-color: white;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    position: absolute;
+    top: 34px;
+    left: -82px;
+    flex-direction: column;
+    border: #4b0082 solid 4px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 4px 14px #4b0082;
 }
 
 .dropdown__content {
-
+    background-color: #4b0082;
+    box-shadow: 0 4px 14px #4b0082;
 }
 
-.show {
-    visibility: visible;
-    opacity: 1;
-    animation: slideDown 0.5s ease-out;
+.dropdown__background.show {
+    display: block;
+    animation: slideDown 0.5s forwards;
 }
 
-.hide {
-    visibility: hidden;
-    opacity: 0;
-    animation: slideUp 0.5s ease-out forwards;
+.dropdown__background.hide {
+    display: block;
+    animation: slideUp 0.5s forwards;
+}
+
+.dropdown__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    border: #4b0082 solid 4px;
+    text-decoration: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+.dropdown__item:hover {
+    border: rgba(163, 225, 45, 1) solid 4px;
+    color: rgba(163, 225, 45, 1);
+}
+
+.dropdown__item svg {
+    margin-right: 8px;
+    font-size: 18px;
 }
 
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateX(120px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
 @keyframes slideUp {
     from {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
     }
     to {
-        transform: translateY(-20px);
+        transform: translateX(120px);
         opacity: 0;
         visibility: hidden;
     }
-}
-
-.dropdown__item {
-}
-
-.dropdown__item:hover {
 }

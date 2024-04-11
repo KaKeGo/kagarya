@@ -8,7 +8,7 @@ import './CommingSoon.css'
 
 const CommingSoon = () => {
   return (
-    <div className='comming__soon__container font-radio-canada b'>
+    <div className='comming__soon__container font-radio-canada'>
         <img className='img' src={commingSoon}/>
     </div>
   )
