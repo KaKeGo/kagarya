@@ -9,9 +9,8 @@
 }
 
 .comming__soon__container .img {
-    width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    /* transform: rotate(90deg) scale(1.5); */
     transform-origin: center center;
 }

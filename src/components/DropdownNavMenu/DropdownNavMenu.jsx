@@ -48,7 +48,7 @@ const DropdownNavMenu = () => {
                         <NavLink className={styles.dropdown__item}>
                             <FontAwesomeIcon icon={faUser} /> Profile
                         </NavLink>
-                        <NavLink className={styles.dropdown__item}>
+                        <NavLink className={styles.dropdown__item} to='/user/settings'>
                             <FontAwesomeIcon icon={faGear} /> Settings
                         </NavLink>
                         <div className={styles.dropdown__item}>

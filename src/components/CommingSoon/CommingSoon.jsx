@@ -1,6 +1,6 @@
 import React from 'react'
 
-import commingSoon from '../../assets/CommingSoon/CommingSoon.avif'
+import commingSoon from '../../assets/CommingSoon/CommingSoon.jpg'
 import './CommingSoon.css'
 
 

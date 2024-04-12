@@ -6,6 +6,7 @@ import About from './content/About/About'
 import Register from './content/Accounts/Register/Register'
 import Login from './content/Accounts/Login/Login'
 import UserStatus from './content/Accounts/UserStatus/UserStatus';
+import Settings from './content/Accounts/UserInterface/Settings/Settings';
 
 
 
@@ -24,6 +25,8 @@ function App() {
           {/* Accounts */}
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
+          {/* User interface */}
+          <Route path='/user/settings' element={<Settings />}/>
 
         </Routes>
       </Layout>

@@ -1,0 +1,72 @@
+
+.settings__menu {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.change__password__container {
+    position: relative;
+    width: 100%;
+    border: 4px solid rgba(207, 0, 15, 1);
+    box-shadow: 0 0 18px rgba(207, 0, 15, 1);
+    background-color: rgba(207, 0, 15, 0.4);
+    min-height: 200px;
+}
+
+.dangerous__zone__text {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(207, 0, 15, 1);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+.button__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.change__password__button {
+    font-weight: bold;
+    color: white;
+    background-color: #4b0085;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #4b0085;
+    border-radius: 15px;
+    transition: box-shadow 0.4s ease, color 0.4s ease;
+}
+
+.change__password__button:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+    color: #FF6347;
+}
+
+.password__inputs {
+
+}
+
+@media (max-width: 1024px) {
+    .settings__menu {
+        width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings__menu {
+        width: 95%;
+    }
+}

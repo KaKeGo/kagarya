@@ -5,7 +5,7 @@
 
 .dropdown__toggle {
     font-size: 24px;
-    transition: 0.3s ease, color 0.6s ease;
+    transition: 0.3s ease, color 0.3s ease;
 }
 
 .dropdown__toggle:hover {
@@ -23,7 +23,7 @@
     font-weight: 800;
     position: absolute;
     top: 34px;
-    left: -82px;
+    left: -80px;
     flex-direction: column;
     border: #4b0082 solid 4px;
     border-bottom-left-radius: 10px;
@@ -37,12 +37,12 @@
 
 .dropdown__background.show {
     display: block;
-    animation: slideDown 0.5s forwards;
+    animation: slideDown 0.3s forwards;
 }
 
 .dropdown__background.hide {
     display: block;
-    animation: slideUp 0.5s forwards;
+    animation: slideUp 0.3s forwards;
 }
 
 .dropdown__item {
@@ -70,7 +70,7 @@
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateX(120px);
+        transform: translateX(80px);
     }
     to {
         opacity: 1;
@@ -85,7 +85,7 @@
         visibility: visible;
     }
     to {
-        transform: translateX(120px);
+        transform: translateX(80px);
         opacity: 0;
         visibility: hidden;
     }
