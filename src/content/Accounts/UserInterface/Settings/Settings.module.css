@@ -13,6 +13,25 @@
     margin-top: 20px;
 }
 
+.form__change__password {
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form__group label {
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-weight: 700;
+    color: rgba(207, 0, 15, 1);
+}
+
 .change__password__container {
     position: relative;
     width: 100%;
@@ -55,8 +74,91 @@
     color: #FF6347;
 }
 
-.password__inputs {
+.password__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
+.password__wrapper .password__inputs {
+    width: 100%;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 0, 0, 1);
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 1);
+    color: rgba(207, 0, 15, 1);
+    font-weight: 600;
+}
+
+.password__wrapper .password__inputs:focus {
+    outline: none;
+    box-shadow: 0 6px 5px rgba(207, 0, 15, 1);
+}
+
+.password__toggle {
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: calc(100% - 12px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    padding: 0;
+}
+
+.icon__style {
+    color: rgba(207, 0, 15, 1);
+}
+
+.button__password__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.save__button {
+    width: 50%;
+    padding: 10px 20px;
+    background-color: rgba(207, 0, 15, 1);
+    color: white;
+    border: none;
+    border-left: 8px solid rgba(255, 255, 255, 0.8);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: box-shadow 0.5s ease;
+}
+
+.save__button:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.abort__button {
+    width: 50%;
+    padding: 10px 20px;
+    background-color: rgba(207, 0, 15, 1);
+    color: white;
+    border: none;
+    border-right: 8px solid rgba(255, 255, 255, 0.8);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 0.5s ease;
+}
+
+.abort__button:hover {
+    box-shadow: 0 0 10px white;
 }
 
 @media (max-width: 1024px) {

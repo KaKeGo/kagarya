@@ -4,7 +4,11 @@ import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
+import LoadingProgress from '../../../../components/LoadingProgress/LoadingProgress';
+import CSRFToken from '../../../../CSRFToken';
+
 import styles from './Settings.module.css'
+
 
 
 
@@ -22,7 +26,8 @@ const Settings = () => {
     }
 
     return (
-        <div className='site__height b'>
+        <div className='site__height'>
+        <LoadingProgress />
             
             <div className={`${styles.settings__menu}`}>
 
@@ -44,26 +49,56 @@ const Settings = () => {
                             )}
 
                             {showPasswordInputs && (
-                                <>
-                                    <div className={styles.password__inputs}>
-                                        <input className={styles.password__inputs} type={oldPasswordVisible ? 'text' : 'password'} placeholder='Old password'/>
-                                        <div className={styles.password__toggle} onClick={() => setOldPasswordVisible(!oldPasswordVisible)}>
-                                            <FontAwesomeIcon className={styles.icon__style} icon={oldPasswordVisible ? faEyeSlash : faEye} />
+                                <form className={styles.form__change__password}><CSRFToken />
+
+                                    <div className={styles.form__group}>
+                                        <label htmlFor='old-password'>Old password</label>
+                                        <div className={styles.password__wrapper}>
+                                            <input className={styles.password__inputs} type={oldPasswordVisible ? 'text' : 'password'} 
+                                                placeholder='Old password' id='old-password' required
+                                            />
+                                            <div className={styles.password__toggle}  role='button' tabIndex='0'
+                                                onClick={() => setOldPasswordVisible(!oldPasswordVisible)}
+                                            >
+                                                <FontAwesomeIcon className={styles.icon__style} icon={oldPasswordVisible ? faEyeSlash : faEye} />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={styles.password__inputs} type={newPasswordVisible ? 'text' : 'password'}>
-                                        <input className={styles.password__inputs} type={newPasswordVisible ? 'text' : 'password'} placeholder='New password'/>
-                                        <div className={styles.password__toggle} onClick={() => setNewPasswordVisible(!newPasswordVisible)}>
-                                            <FontAwesomeIcon className={styles.icon__style} icon={newPasswordVisible ? faEyeSlash : faEye} />
+
+                                    <div className={styles.form__group}>
+                                        <label htmlFor='new-password'>New password</label>
+                                        <div className={styles.password__wrapper}>
+                                            <input className={styles.password__inputs} type={newPasswordVisible ? 'text' : 'password'} 
+                                                placeholder='New password' id='new-password' required
+                                            />
+                                            <div className={styles.password__toggle}  role='button' tabIndex='0'
+                                                onClick={() => setNewPasswordVisible(!newPasswordVisible)}
+                                            >
+                                                <FontAwesomeIcon className={styles.icon__style} icon={newPasswordVisible ? faEyeSlash : faEye} />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={styles.password__inputs} type={confirmPasswordVisible ? 'text' : 'password'}>
-                                        <input className={styles.password__inputs} type={confirmPasswordVisible ? 'text' : 'password'} placeholder='Confirm new password'/>
-                                        <div className={styles.password__toggle} onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}>
-                                            <FontAwesomeIcon className={styles.icon__style} icon={confirmPasswordVisible ? faEyeSlash : faEye} />
+
+                                    <div className={styles.form__group}>
+                                        <label htmlFor='confirm-password'>Confirm password</label>
+                                        <div className={styles.password__wrapper}>
+                                            <input className={styles.password__inputs} type={confirmPasswordVisible ? 'text' : 'password'} 
+                                                placeholder='Confirm password' id='confirm-password' required
+                                            />
+                                            <div className={styles.password__toggle}  role='button' tabIndex='0'
+                                                onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
+                                            >
+                                                <FontAwesomeIcon className={styles.icon__style} icon={confirmPasswordVisible ? faEyeSlash : faEye} />
+                                            </div>
                                         </div>
                                     </div>
-                                </>
+
+                                    <div className={styles.button__password__container}>
+                                        <button type='button' className={styles.abort__button}>Abort</button>
+                                        <button type='submit' className={styles.save__button}>Save</button>
+                                    </div>
+
+                                </form>
                             )}
 
                         </div>
