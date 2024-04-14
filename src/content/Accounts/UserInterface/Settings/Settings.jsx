@@ -24,14 +24,23 @@ const Settings = () => {
     const togglePasswordInputs = () => {
         setShowPasswordInputs(!showPasswordInputs)
     }
+    
 
     return (
         <div className='site__height'>
         <LoadingProgress />
             
-            <div className={`${styles.settings__menu}`}>
+            <div className={`${styles.settings__menu} font-madimi`}>
 
-                <h1>{user?.username_or_email} Settings</h1>
+                <h1 className={styles.settings__title}>{user?.username_or_email} settings</h1>
+
+                <div className={styles.option__container}>
+                    <h1 className={`${styles.option__title} font-mono`}>Options</h1>
+                </div>
+
+                <div className={styles.option__container}>
+                    <h1 className={`${styles.option__title} font-mono`}>Email settings</h1>
+                </div>
 
                 <div className={styles.background}>
                     <div className={styles.change__password__container}>
@@ -94,8 +103,14 @@ const Settings = () => {
                                     </div>
 
                                     <div className={styles.button__password__container}>
-                                        <button type='button' className={styles.abort__button}>Abort</button>
-                                        <button type='submit' className={styles.save__button}>Save</button>
+                                        <button type='button' className={styles.abort__button}
+                                            onClick={() => setShowPasswordInputs(false)}
+                                        >
+                                            Abort
+                                        </button>
+                                        <button type='submit' className={styles.save__button}>
+                                            Save
+                                        </button>
                                     </div>
 
                                 </form>

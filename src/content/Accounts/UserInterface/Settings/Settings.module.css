@@ -1,16 +1,43 @@
 
 .settings__menu {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid #4b0082;
+    box-shadow: 0 2px 5px #4b0085;
+    background-color: whitesmoke;
+}
+
+.settings__title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 24px;
+    margin: 14px 0;
+    color: #4b0082;
+    text-decoration: underline;
+}
+
+.option__container {
+    width: 80%;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.option__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4b0082;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .background {
-    width: 100%;
+    width: 80%;
     background-color: white;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .form__change__password {
@@ -22,7 +49,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form__group label {
@@ -59,19 +86,18 @@
 .change__password__button {
     font-weight: bold;
     color: white;
-    background-color: #4b0085;
+    background-color: rgba(207, 0, 15, 1);
     border: none;
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
-    box-shadow: 0 0 10px #4b0085;
+    box-shadow: 0 0 15px rgba(207, 0, 0, 1);
     border-radius: 15px;
     transition: box-shadow 0.4s ease, color 0.4s ease;
 }
 
 .change__password__button:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
-    color: #FF6347;
+    box-shadow: 0 0 25px white;
 }
 
 .password__wrapper {
@@ -119,9 +145,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .save__button {
@@ -140,7 +166,7 @@
 }
 
 .save__button:hover {
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 20px white;
 }
 
 .abort__button {
@@ -158,7 +184,7 @@
 }
 
 .abort__button:hover {
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 20px white;
 }
 
 @media (max-width: 1024px) {
