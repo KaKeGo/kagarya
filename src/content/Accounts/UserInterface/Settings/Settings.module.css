@@ -187,6 +187,15 @@
     box-shadow: 0 0 20px white;
 }
 
+.error {
+    color: rgba(207, 0, 15, 1);
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+}
+
 @media (max-width: 1024px) {
     .settings__menu {
         width: 75%;

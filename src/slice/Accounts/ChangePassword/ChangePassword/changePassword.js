@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
-import { DEV_URL } from '../../../Api_url'
+import { DEV_URL } from "../../../../Api_url";
 
 
 
-export const registerUser = createAsyncThunk(
-    'user/register',
+export const changePassword = createAsyncThunk(
+    'user/changePassword',
     async (userData, { rejectWithValue }) => {
         const csrftoken = Cookies.get('kakusie')
 
@@ -15,20 +15,21 @@ export const registerUser = createAsyncThunk(
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrftoken
+                'X-CSRFToken': csrftoken,
             },
             withCredentials: true
         }
 
         try {
             const response = await axios.post(
-                `${DEV_URL}accounts/create/`,
-                userData, 
-                config
-                )
-                return response.data
+                `${DEV_URL}accounts/changepassword/`,
+                userData,
+                config,
+            )
+            console.log(response.data)
+            return response.data
         } catch (err) {
-            console.log('Error data:', err.response.data)
+            console.log("Błąd z akcji Reduxa:", err.response.data);
             return rejectWithValue(err.response.data)
         }
     }
@@ -40,33 +41,25 @@ const initialState = {
     error: null,
 }
 
-const registerSlice = createSlice({
-    name: 'register',
+const changePasswordSlice = createSlice({
+    name: 'changePassword',
     initialState: initialState,
-    reducers: {
-        resetRegisterState: (state) => {
-            state.status = 'idle'
-            state.user = {}
-            state.error = null
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(registerUser.pending, (state) => {
+            .addCase(changePassword.pending, (state) => {
                 state.status = 'loading'
             })
-            .addCase(registerUser.fulfilled, (state, action) => {
+            .addCase(changePassword.fulfilled, (state, action) => {
                 state.status = 'succeeded'
                 state.user = action.payload
                 state.error = null
             })
-            .addCase(registerUser.rejected, (state, action) => {
+            .addCase(changePassword.rejected, (state, action) => {
                 state.status = 'failed'
                 state.error = action.payload
             })
     }
 })
 
-export const { resetRegisterState } = registerSlice.actions
-
-export default registerSlice.reducer
+export default changePasswordSlice.reducer
