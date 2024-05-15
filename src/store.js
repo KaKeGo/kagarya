@@ -7,6 +7,7 @@ import registerReducer from './slice/Accounts/Register/register'
 import loginReducer from './slice/Accounts/Login/Login'
 import logoutReducer from './slice/Accounts/Logout/Logout'
 import changePasswordReducer from './slice/Accounts/ChangePassword/ChangePassword/changePassword'
+import resetPasswordReducer from './slice/Accounts/ChangePassword/ResetPassword/resetPassword'
 
 
 const store = configureStore({
@@ -18,6 +19,7 @@ const store = configureStore({
         login: loginReducer,
         logout: logoutReducer,
         changePassword: changePasswordReducer,
+        resetPassword: resetPasswordReducer,
     }
 })
 

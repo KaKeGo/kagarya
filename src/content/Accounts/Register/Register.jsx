@@ -117,8 +117,7 @@ const Register = () => {
         </div>
 
         <button type='submit'>Create account</button>
-        {error && typeof error === 'string' && <p className={styles.error}>{error}</p>}
-
+        
       </form>
 
     </div>
