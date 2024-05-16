@@ -8,6 +8,7 @@ import Login from './content/Accounts/Login/Login'
 import UserStatus from './content/Accounts/UserStatus/UserStatus';
 import Settings from './content/Accounts/UserInterface/Settings/Settings';
 import ResetPassword from './content/Accounts/ResetPassword/ResetPassword';
+import ResetPasswordConfrim from './content/Accounts/ResetPasswordConfirm/ResetPasswordConfrim';
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/reset-password' element={<ResetPassword />}/>
+          <Route path='/reset-password-confirm/:token' element={<ResetPasswordConfrim />}/>
           {/* User interface */}
           <Route path='/user/settings' element={<Settings />}/>
 
