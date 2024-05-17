@@ -52,7 +52,7 @@ const ResetPasswordConfrim = () => {
                     <div className={styles.password__wrapper}>
                         <input type={passwordVisible ? 'text' : 'password'}
                             value={newPassword} onChange={(e) => setNewPassword(e.target.value)}
-                            placeholder='New password' required
+                            placeholder='New password' required autoFocus
                         />
                         <div className={styles.password__toggle}
                             onClick={() => setPasswordVisible(!passwordVisible)}
@@ -78,14 +78,19 @@ const ResetPasswordConfrim = () => {
                             onClick={() => setPasswordConfirmVisible(!passwordConfirmVisible)}
                             role='button' tabIndex='0'>
                             <FontAwesomeIcon className={styles.icon__style}
-                                icon={passwordVisible ? faEyeSlash : faEye}
+                                icon={passwordConfirmVisible ? faEyeSlash : faEye}
                             />
                         </div>
                     </div>
                     {status === 'failed' && error.confirm_new_password && (
                         <p className={styles.error__message}>{error.confirm_new_password[0]}</p>
                     )}
+                    
                 </div>
+
+                {status === 'failed' && error.error && (
+                        <p className={styles.error}>{error.error}</p>
+                )}
 
                 <button type='submit' className={styles.confirm__form__button}>Reset password</button>
 
