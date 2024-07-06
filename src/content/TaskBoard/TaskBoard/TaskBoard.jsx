@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './TaskBoard.module.css'
+import LoadingProgress from '../../../components/LoadingProgress/LoadingProgress'
 
 const TaskBoard = () => {
   const dispatch = useDispatch()
@@ -17,16 +18,10 @@ const TaskBoard = () => {
     dispatch(taskBoard())
   }, [dispatch])
 
-  if (status === 'loading') {
-    return <div>Loading...</div>
-  }
-
-  if (status === 'failed') {
-    return <div>Error: {error}</div>
-  }
-
   return (
     <div className={`${styles.task__board__container} site__height`}>
+      <LoadingProgress isLoading={status === 'loading'} />
+      {status === 'failed' && <div>Error: {error}</div>}
       {status === 'succeeded' && task.length > 0 && (
         task.map((item) => (
           <>
