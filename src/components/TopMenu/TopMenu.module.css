@@ -60,7 +60,8 @@
     animation: expandMenuContent 0.2s ease forwards;
 }
 
-.top__menu__content a, p {
+.top__menu__content a,
+.top__menu__content p {
     color: rgba(163, 225, 45, 1);
     font-size: 18px;
     font-weight: bold;

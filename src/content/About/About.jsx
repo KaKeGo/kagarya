@@ -1,7 +1,7 @@
 import React from 'react'
 import CommingSoon from '../../components/CommingSoon/CommingSoon'
 
-import './About.css'
+import style from './About.module.css'
 
 
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import nprogress from 'nprogress'
 
 import 'nprogress/nprogress.css'
-import './LoadingProgress.css'
+import './LoadingProgress.module.css'
 
 
 

@@ -9,9 +9,10 @@ export const taskBoard = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get(
-                `${DEV_URL}taskboard/`,
+                `${DEV_URL}taksboard/`,
                 { withCredentials: true }
             )
+            console.log(response.data)
             return response.data
         } catch (err) {
             return rejectWithValue(err.response.data)
@@ -39,7 +40,7 @@ const taskBoardSlice = createSlice({
                 state.task = action.payload
                 state.error = null
             })
-            addCase(taskBoard.rejected, (state, action) => {
+            .addCase(taskBoard.rejected, (state, action) => {
                 state.status = 'failed'
                 state.error = action.payload
             })

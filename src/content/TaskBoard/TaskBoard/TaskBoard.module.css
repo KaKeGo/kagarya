@@ -1,0 +1,120 @@
+.task__board__container {
+    margin: 0 auto;
+}
+
+.board__box {
+    width: 60%;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    border: 2px solid #4b0082;
+    box-shadow: 0 2px 5px #4b0085;
+    border-radius: 6px;
+}
+
+.board__content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board__header {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.board__header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board__title {
+    width: 60%;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.board__dash {
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #4b0082;
+    margin: -2px auto;
+    border-radius: 25px;
+    box-shadow: 0 0 6px #4b0082;
+}
+
+.board__task__summary {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.task__summary {
+    font-size: 20px;
+    font-weight: 800;
+    color: #4b0082;
+}
+
+.board__body {
+    width: 100%;
+    padding: 20px;
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.board__footer {
+    width: 100%;
+    padding: 4px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 100px;
+}
+
+.board__check {
+    display: flex;
+    width: 40%;
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.board__check__button {
+    width: 60%;
+    height: 100%;
+    color: white;
+    background-color: #4b0085;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 0 4px #4b0085;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board__check__button:hover {
+    color: rgba(163, 225, 45, 1);
+    box-shadow: 0 0 15px #4b0085;
+}
+
+.check__icon {
+    margin-left: 8px;
+}

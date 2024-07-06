@@ -10,6 +10,9 @@ import changePasswordReducer from './slice/Accounts/ChangePassword/ChangePasswor
 import resetPasswordReducer from './slice/Accounts/ChangePassword/ResetPassword/resetPassword'
 import resetPasswordConfirmReducer from './slice/Accounts/ChangePassword/ResetPasswordConfirm/ResetPasswordConfirm'
 
+// Task board
+import taskBoardReducer from './slice/TaskBoard/TaskBoard/taskBoard'
+
 
 const store = configureStore({
     reducer: {
@@ -22,6 +25,8 @@ const store = configureStore({
         changePassword: changePasswordReducer,
         resetPassword: resetPasswordReducer,
         resetPasswordConfirm: resetPasswordConfirmReducer,
+        // Task board
+        taskBoard: taskBoardReducer,
     }
 })
 

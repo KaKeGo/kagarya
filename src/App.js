@@ -9,7 +9,8 @@ import UserStatus from './content/Accounts/UserStatus/UserStatus';
 import Settings from './content/Accounts/UserInterface/Settings/Settings';
 import ResetPassword from './content/Accounts/ResetPassword/ResetPassword';
 import ResetPasswordConfrim from './content/Accounts/ResetPasswordConfirm/ResetPasswordConfrim';
-
+// Task board
+import TaskBoard from './content/TaskBoard/TaskBoard/TaskBoard'
 
 
 
@@ -31,6 +32,8 @@ function App() {
           <Route path='/reset-password-confirm/:token' element={<ResetPasswordConfrim />}/>
           {/* User interface */}
           <Route path='/user/settings' element={<Settings />}/>
+          {/* Task board */}
+          <Route path='/taskboard' element={<TaskBoard />}/>
 
         </Routes>
       </Layout>

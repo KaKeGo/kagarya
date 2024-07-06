@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { UseSelector, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
@@ -7,7 +8,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import style from './TopMenu.module.css'
-
 
 
 const TopMenu = () => {
@@ -27,7 +27,7 @@ const TopMenu = () => {
 
             <div className={style.top__menu__content}>
                 {isAuthenticated ? (
-                    <a href='#'><FontAwesomeIcon icon={faListCheck}/></a>
+                    <NavLink to='/taskboard'><FontAwesomeIcon icon={faListCheck}/></NavLink>
                 ) : (
                     <>
                         <p>Login to see more</p>
