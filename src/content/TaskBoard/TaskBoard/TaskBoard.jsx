@@ -58,7 +58,7 @@ const TaskBoard = () => {
                 </div>
 
                 <div className={styles.board__check}>
-                  <NavLink to={item.slug} className={`${styles.board__check__button} font-concert-one`}>
+                  <NavLink to={`/taskboard/detail/${item.slug}`} className={`${styles.board__check__button} font-concert-one`}>
                     Check <FontAwesomeIcon className={styles.check__icon} icon={faRightToBracket} />
                   </NavLink>
                 </div>
