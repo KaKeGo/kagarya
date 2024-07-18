@@ -11,6 +11,7 @@ import ResetPassword from './content/Accounts/ResetPassword/ResetPassword';
 import ResetPasswordConfrim from './content/Accounts/ResetPasswordConfirm/ResetPasswordConfrim';
 // Task board
 import TaskBoard from './content/TaskBoard/TaskBoard/TaskBoard'
+import TaskBoardDetail from './content/TaskBoard/TaskBoardDetail/TaskBoardDetail';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/user/settings' element={<Settings />}/>
           {/* Task board */}
           <Route path='/taskboard' element={<TaskBoard />}/>
+          <Route path='/taskboarddetail/:slug' element={<TaskBoardDetail />}/>
 
         </Routes>
       </Layout>
