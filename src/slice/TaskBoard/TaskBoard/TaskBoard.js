@@ -9,7 +9,7 @@ export const taskBoard = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get(
-                `${DEV_URL}taksboard/`,
+                `${DEV_URL}taskboard/`,
                 { withCredentials: true }
             )
             console.log(response.data)

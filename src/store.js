@@ -12,7 +12,7 @@ import resetPasswordConfirmReducer from './slice/Accounts/ChangePassword/ResetPa
 
 // Task board
 import taskBoardReducer from './slice/TaskBoard/TaskBoard/taskBoard'
-import taskBoardDetailReducer from './slice/TaskBoard/TaskBoardDetail/taskBoardDetail'
+import taskBoardDetailReducer from './slice/TaskBoard/TaskBoardDetail/taskBoardDetail';
 
 
 const store = configureStore({

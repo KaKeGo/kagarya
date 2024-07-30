@@ -1,0 +1,121 @@
+.board__detail__container {
+    margin: 0 auto;
+}
+
+.board__box {
+    width: 80%;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    border: 2px solid #4b0082;
+    box-shadow: 0 2px 5px #4b0085;
+    border-radius: 6px;
+}
+
+/* Header styles */
+.board__header {
+    margin: 20px;
+}
+
+.header__columns {
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+}
+
+.header__title {
+    width: 25%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.board__dash {
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #4b0082;
+    margin: -2px auto;
+    border-radius: 25px;
+    box-shadow: 0 0 6px #4b0082;
+}
+
+.header__summary {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.completed__tasks {
+    color: green;
+    margin: 0 20px;
+}
+
+.remaining__tasks {
+    color: orangered;
+    margin: 0 20px;
+}
+
+.total__tasks {
+    color: blue;
+    margin: 0 20px;
+}
+
+.description {
+    width: 100%;
+    padding: 10px 45px;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* Task styles */
+.board__tasks {
+    border: solid black 1px;
+    margin: 20px;
+}
+
+/* Pagination */
+.board__pagination {
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4b0082;
+}
+
+.pagination__button {
+    font-size: 18px;
+    background: none;
+    cursor: pointer;
+    padding: 2px 0;
+    margin: 0 2px;
+    margin-top: 2px;
+}
+
+.pagination__numbers {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 2px;
+    background: none;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.pagination__button:disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.pagination__numbers.active {
+    font-weight: bold;
+    font-size: 22px;
+}

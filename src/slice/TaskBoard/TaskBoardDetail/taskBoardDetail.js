@@ -4,12 +4,12 @@ import axios from "axios";
 import { DEV_URL } from "../../../Api_url";
 
 
-export const taskBoardDetai = createAsyncThunk(
-    'taskBoardDetail/taskBoardDetail',
-    async (slug, { rejectWithValue }) => {
+export const fetchTaskBoardDetail = createAsyncThunk(
+    'taskBoardDetail/fetchTaskBoardDetail',
+    async ({ slug, page = 1 }, { rejectWithValue }) => {
         try {
             const response = await axios.get(
-                `${DEV_URL}taskboard/${slug}/`,
+                `${DEV_URL}taskboard/${slug}/?page=${page}`,
                 { withCredentials: true }
             )
             console.log(response.data)
@@ -22,9 +22,15 @@ export const taskBoardDetai = createAsyncThunk(
 
 
 const initialState = {
-    taskBoardDetai: {},
+    task: {},
     status: 'idle',
     error: null,
+    pagination: {
+        current_page: 1,
+        total_pages: 1,
+        links: {},
+        page_range: [],
+    }
 }
 
 
@@ -34,17 +40,23 @@ const taskBoardDetailSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(taskBoardDetai.pending, (state) => {
+            .addCase(fetchTaskBoardDetail.pending, (state) => {
                 state.status = 'loading'
             })
-            .addCase(taskBoardDetai.fulfilled, (state, action) => {
-                state.status = 'succeded'
-                state.taskBoardDetai = action.payload
+            .addCase(fetchTaskBoardDetail.fulfilled, (state, action) => {
+                state.status = 'succeeded'
+                state.task = action.payload
                 state.error = null
+                state.pagination = {
+                    current_page: action.payload.tasks.current_page,
+                    total_pages: action.payload.tasks.total_pages,
+                    links: action.payload.tasks.links,
+                    page_range: action.payload.tasks.page_range,
+                }
             })
-            .addCase(taskBoardDetai.rejected, (state, action) => {
+            .addCase(fetchTaskBoardDetail.rejected, (state, action) => {
                 state.status = 'failed'
-                state.error = action.payload
+                state.error = action.payload.message || 'Something went wrong'
             })
     }
 })

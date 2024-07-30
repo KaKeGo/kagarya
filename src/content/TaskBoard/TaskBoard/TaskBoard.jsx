@@ -10,6 +10,8 @@ import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 import styles from './TaskBoard.module.css'
 import LoadingProgress from '../../../components/LoadingProgress/LoadingProgress'
 
+
+
 const TaskBoard = () => {
   const dispatch = useDispatch()
   const { task, status, error } = useSelector((state) => state.taskBoard)
@@ -58,7 +60,7 @@ const TaskBoard = () => {
                 </div>
 
                 <div className={styles.board__check}>
-                  <NavLink to={`/taskboard/detail/${item.slug}`} className={`${styles.board__check__button} font-concert-one`}>
+                  <NavLink to={`/taskboard/${item.slug}`} className={`${styles.board__check__button} font-concert-one`}>
                     Check <FontAwesomeIcon className={styles.check__icon} icon={faRightToBracket} />
                   </NavLink>
                 </div>

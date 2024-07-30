@@ -35,7 +35,7 @@ function App() {
           <Route path='/user/settings' element={<Settings />}/>
           {/* Task board */}
           <Route path='/taskboard' element={<TaskBoard />}/>
-          <Route path='/taskboard/detail/:slug' element={<TaskBoardDetail />}/>
+          <Route path='/taskboard/:slug' element={<TaskBoardDetail />}/>
 
         </Routes>
       </Layout>
